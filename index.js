@@ -56,68 +56,72 @@ const writeFileSync = util.promisify(fs.writeFile);
 
 // to generate the readme file
 function generateReadMe(answers) {
-    return `
-    #${answers.projectName}
-    [![GitHub License]         (https://github.com/${answers.github}/${answers.projectName})
+    return `    
+#${answers.projectName}
 
-    ## Description
-    ${answers.description}
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)]
+(https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
-    ## Table of Contents
+(https://github.com/${answers.github}/${answers.projectName})
 
-    * [Installation](#installation)
+## Description
+${answers.description}
 
-    * [Usage](#usage)
+## Table of Contents
 
-    * [License](#license)
+* [Installation](#installation)
 
-    * [Contributing](#contributing)
+* [Usage](#usage)
 
-    * [Tests](#tests)
+* [License](#license)
 
-    * [Questions](#questions)
+* [Contributing](#contributing)
 
-    ## Installation
+* [Tests](#tests)
 
-    To install necessary dependencies, run the following command: 
+* [Questions](#questions)
 
-    ...
+## Installation
 
-    ${answers.installation}
+To install necessary dependencies, run the following command: 
 
-    ...
+...
 
-    ## Usage
+${answers.installation}
 
-    ${answers.usage}
+...
 
-    ## License
+## Usage
 
-    This project is licensed under the ${answers.license} license.
+${answers.usage}
 
-    ## Contributing
+## License
 
-    ${answers.contributing}
+This project is licensed under the ${answers.license} license.
 
-    ## Tests
+## Contributing
 
-    To run tests, run the following command:
+${answers.contributing}
+
+## Tests
+
+To run tests, run the following command:
     
-    ...
+...
     
-    ${answers.test}
+${answers.test}
 
-    ...
+...
 
-    ## Questions
+## Questions
 
-    <img src="${answers.data.userAvatar}"
-    alt="avatar" style="border-radius: 16px" width="30" />
+<img src="${answers.userAvatar}"
+alt="avatar" style="border-radius: 16px" width="30" />
 
-    If you have any questions about the repo, open an issue or contact 
-    [${answers.github}](https://api.github.com/users/${answers.github}) 
-    directly at [${userEmail}]
-    `
+If you have any questions about the repo, open an issue or contact 
+[${answers.github}](https://api.github.com/users/${answers.github}) 
+directly at [${answers.userEmail}]
+`
 }
 
 promptUser()
@@ -126,9 +130,9 @@ promptUser()
         const queryUrl = `https://api.github.com/users/${answers.github}`
         axios.get(queryUrl).then(function (res) {
             // console.log(res)
-            userEmail = res.data.email
+            answers.userEmail = res.data.email
             console.log(userEmail)
-            userAvatar = res.data.avatar_url
+            answers.userAvatar = res.data.avatar_url
             console.log(userAvatar)
             console.log(answers.projectName)
             const readme = generateReadMe(answers);
