@@ -57,12 +57,11 @@ const writeFileSync = util.promisify(fs.writeFile);
 // to generate the readme file
 function generateReadMe(answers) {
     return `    
-#${answers.projectName}
+## ${answers.projectName}
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)]
-(https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
 
-(https://github.com/${answers.github}/${answers.projectName})
+https://github.com/${answers.github}/${answers.projectName}
 
 ## Description
 ${answers.description}

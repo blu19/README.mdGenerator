@@ -1,12 +1,12 @@
     
-#Readme generator
+## readme
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
 
-https://github.com/blu19/Readme_generator
+https://github.com/blu19/readme
 
 ## Description
-generates a readme.md file from user inputs
+
 
 ## Table of Contents
 
@@ -28,13 +28,13 @@ To install necessary dependencies, run the following command:
 
 ...
 
-npm i
+
 
 ...
 
 ## Usage
 
-it needs to have an link to their github account and uses a markdown file
+
 
 ## License
 
@@ -42,7 +42,7 @@ This project is licensed under the MIT license.
 
 ## Contributing
 
-they should be able to run it on the command line
+
 
 ## Tests
 
@@ -50,7 +50,7 @@ To run tests, run the following command:
     
 ...
     
-npm test
+
 
 ...
 
